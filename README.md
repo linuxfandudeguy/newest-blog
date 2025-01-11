@@ -11,6 +11,10 @@ console.log("syntax higlighting")
 ```
 
 ---
+# Issues
+
 please pr this for rss it would be really helpful
 
-also fix the dark mode light mode toggle issue where the colors doesn't adapt
+~~also fix the dark mode light mode toggle issue where the colors doesn't adapt~~ **FIXED**
+
+please PR this to use the newer version of next
