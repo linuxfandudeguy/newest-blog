@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Set default text color for all tags */
+  * {
+    @apply text-gray-100;
+  }
+
+  /* Body background and text color */
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  /* Prose styling */
+  .prose {
+    @apply max-w-none;
+  }
+
+  /* Preserve code block colors */
+  .prose pre {
+    @apply bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700;
+  }
+
+  .prose code {
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-800;
+  }
+
+  /* Images */
+  .prose img {
+    @apply mx-auto rounded-lg;
+  }
+
+  /* Links */
+  .prose a {
+    @apply text-blue-600 dark:text-blue-400 no-underline hover:underline;
+  }
+}
+
+/* Manual syntax highlighting */
+pre {
+  @apply p-4 my-4 overflow-auto rounded-lg;
+  background-color: theme('colors.gray.100');
+  color: theme('colors.gray.900');
+}
+
+.dark pre {
+  background-color: theme('colors.gray.800');
+  color: theme('colors.gray.100');
+}
+
+code {
+  @apply rounded-md p-1;
+  background-color: theme('colors.gray.100');
+  color: theme('colors.gray.900');
+}
+
+.dark code {
+  background-color: theme('colors.gray.800');
+  color: theme('colors.gray.100');
+}
+
+/* Example of manual syntax highlighting */
+.token.comment {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.token.keyword {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.token.string {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.token.function {
+  @apply text-pink-600 dark:text-pink-400;
+}
