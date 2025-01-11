@@ -5,12 +5,12 @@
 @layer base {
   /* Set default text color for all tags */
   * {
-    @apply text-gray-100;
+    @apply text-black dark:text-white;
   }
 
   /* Body background and text color */
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-100;
+    @apply bg-white dark:bg-gray-900 text-black dark:text-white;
   }
 }
 
