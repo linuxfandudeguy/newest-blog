@@ -12,3 +12,5 @@ console.log("syntax higlighting")
 
 ---
 please pr this for rss it would be really helpful
+
+also fix the dark mode light mode toggle issue where the colors doesn't adapt
