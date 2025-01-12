@@ -3,16 +3,9 @@ title: 'Why I’ll Never Use WordPress Again (And Why Next.js is My New Best Fri
 date: '2025-01-11'
 ---
 
- import Image from 'next/image';
 
 
-<Image
-        src="/wp_sux.jpg" 
-        alt="A warning to all people who are planning to use WordPress"
-        width={800}
-        height={600}
-        priority 
-      />
+
 
 # **Why I’ll Never Use WordPress Again (And Why Next.js is My New Best Friend)**
 
