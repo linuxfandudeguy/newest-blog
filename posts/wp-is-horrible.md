@@ -10,8 +10,6 @@ date: '2025-01-11'
         height={400} 
         priority 
       />
-
-
 # **Why I’ll Never Use WordPress Again (And Why Next.js is My New Best Friend)**
 
 Well, there I was, swimming in the WordPress hype. People had it: "It's the best! It's perfect for a start-up! You can do everything with it!" Well, that was my cue to grab a digital surfboard and dive headfirst into the waves of web development. Well, what I didn't know was that those waves were more like the angry sea of confusion, and I would be knocked out by some rogue PHP whale.
