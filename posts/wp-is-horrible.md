@@ -3,8 +3,13 @@ title: 'Why I’ll Never Use WordPress Again (And Why Next.js is My New Best Fri
 date: '2025-01-11'
 ---
 
-
-
+     <Image 
+        src="/wp_sux.jpg" 
+        alt="An image titled wp_sux"
+        width={600} 
+        height={400} 
+        priority 
+      />
 
 
 # **Why I’ll Never Use WordPress Again (And Why Next.js is My New Best Friend)**
