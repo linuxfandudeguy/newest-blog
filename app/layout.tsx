@@ -21,7 +21,7 @@ export default function RootLayout({
        <div>
       <a href="/rss">
         <img 
-          src="/rss-svgrepo-com.png" 
+          src="/rss-svgrepo-com.svg" 
           alt="RSS Icon" 
           width="64" 
           height="64"
