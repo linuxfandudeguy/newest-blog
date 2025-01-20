@@ -29,6 +29,13 @@ export default function RootLayout({
     />
   </a>
 </div>
+<a href="https://info.flagcounter.com/qAI6">
+        <img
+          src="https://s05.flagcounter.com/map/qAI6/size_s/txt_000000/border_CCCCCC/pageviews_0/viewers_0/flags_0/"
+          alt="Flag Counter"
+          style={{ border: '0' }}
+        />
+      </a>  
   </body>
     </html>
   )
