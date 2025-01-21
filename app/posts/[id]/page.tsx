@@ -1,13 +1,9 @@
-'use client'; // This ensures the component runs on the client side
-
-import Script from 'next/script';
 import Link from 'next/link';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypePrism from 'rehype-prism-plus';
 import { getPostData } from '../../../lib/posts';
 import { ArrowLeft, Calendar } from 'lucide-react';
-import { useEffect } from 'react';
 
 export default async function Post({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id);
@@ -40,30 +36,19 @@ export default async function Post({ params }: { params: { id: string } }) {
             },
           }}
         />
-        {/* Comments Section */}
-        <Comments />
+        {/* Utterances Comments Section */}
+        <div id="comments-section">
+          <script
+            src="https://utteranc.es/client.js"
+            repo="linuxfandudeguy/newest-blog" /* Replace with your GitHub repo */
+            issue-term="url"
+            label="comments"
+            theme="github-dark"
+            crossOrigin="anonymous"
+            async
+          ></script>
+        </div>
       </main>
     </div>
   );
-}
-
-function Comments() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'linuxfandudeguy/newest-blog'); // Replace with your repo
-    script.setAttribute('issue-term', 'url');
-    script.setAttribute('label', 'comments');
-    script.setAttribute('theme', 'github-dark');
-    script.crossOrigin = 'anonymous';
-    script.async = true;
-
-    const commentContainer = document.getElementById('comments-section');
-    if (commentContainer) {
-      commentContainer.innerHTML = ''; // Clear existing content before appending
-      commentContainer.appendChild(script);
-    }
-  }, []);
-
-  return <div id="comments-section" />;
 }
