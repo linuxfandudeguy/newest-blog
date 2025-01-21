@@ -1,19 +1,25 @@
+'use client'; // This ensures the component runs on the client side
+
 import Script from 'next/script';
-import Link from 'next/link'
-import { ThemeToggle } from '../../components/ThemeToggle'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import rehypePrism from 'rehype-prism-plus'
-import { getPostData } from '../../../lib/posts'
-import { ArrowLeft, Calendar } from 'lucide-react'
+import Link from 'next/link';
+import { ThemeToggle } from '../../components/ThemeToggle';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import rehypePrism from 'rehype-prism-plus';
+import { getPostData } from '../../../lib/posts';
+import { ArrowLeft, Calendar } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default async function Post({ params }: { params: { id: string } }) {
-  const postData = await getPostData(params.id)
+  const postData = await getPostData(params.id);
 
   return (
     <div className="min-h-screen max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <header className="py-8">
         <div className="flex justify-between items-center mb-8">
-          <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+          <Link
+            href="/"
+            className="text-blue-600 dark:text-blue-400 hover:underline flex items-center"
+          >
             <ArrowLeft className="mr-2" size={20} />
             Back to Home
           </Link>
@@ -26,31 +32,38 @@ export default async function Post({ params }: { params: { id: string } }) {
         </div>
       </header>
       <main className="prose dark:prose-invert max-w-none">
-        <MDXRemote 
-          source={postData.content} 
+        <MDXRemote
+          source={postData.content}
           options={{
             mdxOptions: {
-              rehypePlugins: [[rehypePrism, { ignoreMissing: true }]]
-            }
+              rehypePlugins: [[rehypePrism, { ignoreMissing: true }]],
+            },
           }}
         />
-   <Script
-        src="https://utteranc.es/client.js"
-        strategy="lazyOnload"
-        onLoad={() => {
-          const script = document.createElement('script');
-          script.src = 'https://utteranc.es/client.js';
-          script.setAttribute('repo', 'linuxfandudeguy/newest-blog'); 
-          script.setAttribute('issue-term', 'url');
-          script.setAttribute('label', 'comments');
-          script.setAttribute('theme', 'github-dark');
-          script.crossOrigin = 'anonymous';
-          script.async = true;
-          document.getElementById('comments-section').appendChild(script);
-        }}
-      />      
-</main>
+        {/* Comments Section */}
+        <Comments />
+      </main>
     </div>
-  )
+  );
 }
 
+function Comments() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://utteranc.es/client.js';
+    script.setAttribute('repo', 'linuxfandudeguy/newest-blog'); // Replace with your repo
+    script.setAttribute('issue-term', 'url');
+    script.setAttribute('label', 'comments');
+    script.setAttribute('theme', 'github-dark');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const commentContainer = document.getElementById('comments-section');
+    if (commentContainer) {
+      commentContainer.innerHTML = ''; // Clear existing content before appending
+      commentContainer.appendChild(script);
+    }
+  }, []);
+
+  return <div id="comments-section" />;
+}
