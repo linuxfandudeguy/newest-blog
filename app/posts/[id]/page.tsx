@@ -1,4 +1,4 @@
-
+import Script from 'next/script';
 import Link from 'next/link'
 import { ThemeToggle } from '../../components/ThemeToggle'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -34,7 +34,22 @@ export default async function Post({ params }: { params: { id: string } }) {
             }
           }}
         />
-      </main>
+   <Script
+        src="https://utteranc.es/client.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          const script = document.createElement('script');
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', 'linuxfandudeguy/newest-blog'); 
+          script.setAttribute('issue-term', 'url');
+          script.setAttribute('label', 'comments');
+          script.setAttribute('theme', 'github-dark');
+          script.crossOrigin = 'anonymous';
+          script.async = true;
+          document.getElementById('comments-section').appendChild(script);
+        }}
+      />      
+</main>
     </div>
   )
 }
