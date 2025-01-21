@@ -36,17 +36,7 @@ export default async function Post({ params }: { params: { id: string } }) {
             },
           }}
         />
-        {/* Utterances Comments Section */}
-        <div id="comments-section">
-          <script
-            src="https://utteranc.es/client.js"
-            repo="linuxfandudeguy/newest-blog" /* Replace with your GitHub repo */
-            issue-term="url"
-            label="comments"
-            theme="photon-dark"
-            crossOrigin="anonymous"
-            async
-          ></script>
+       
         </div>
       </main>
     </div>
