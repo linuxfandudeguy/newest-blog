@@ -43,7 +43,7 @@ export default async function Post({ params }: { params: { id: string } }) {
             repo="linuxfandudeguy/newest-blog" /* Replace with your GitHub repo */
             issue-term="url"
             label="comments"
-            theme="github-dark"
+            theme="photon-dark"
             crossOrigin="anonymous"
             async
           ></script>
