@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ThemeToggle } from './components/ThemeToggle'
 import { getSortedPostsData } from '../lib/posts'
 import { BookOpen, Calendar } from 'lucide-react'
+import React from "react";
 
 export default function Home() {
   const posts = getSortedPostsData()
