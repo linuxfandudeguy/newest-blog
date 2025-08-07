@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypePrism from 'rehype-prism-plus';
 import { getPostData } from '../../../lib/posts';
 import { ArrowLeft, Calendar } from 'lucide-react';
+import React from "react";
 
 export default async function Post({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id);
@@ -37,7 +38,6 @@ export default async function Post({ params }: { params: { id: string } }) {
           }}
         />
        
-        </div>
       </main>
     </div>
   );
